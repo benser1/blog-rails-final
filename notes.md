@@ -11,7 +11,10 @@ I will need the following:
 - Posts
   - belongs_to :user ### check on this
   - Posts have content, title
-  - Include a category check-box in posts form
+  -Form
+    - Includes Title, Content, date created?, Category check-boxes
+      - Maybe let's users select themselves?
+      - Maybe have an admin check box?
 
 - UserPosts    ---- this will be the join table
   - belongs_to :user
@@ -23,6 +26,7 @@ I will need the following:
   - #home method
     - root 'welcome#home'
   - "Welcome to Blog ........"
+  - ********** Figure out how to welcome them by first name ************
 
 
 
