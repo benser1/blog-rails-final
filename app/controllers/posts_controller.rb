@@ -9,8 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    redirect_to root_path
+    @post = Post.create(post_params)
+    redirect_to posts_path
   end
 
   def edit
