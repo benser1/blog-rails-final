@@ -15,3 +15,14 @@ I will need the following:
 - UserPosts    ---- this will be the join table
   - belongs_to :user
   - belongs_to :post
+
+
+
+- Create a Welcome Controller to replace Rails main page  
+  - #home method
+    - root 'welcome#home'
+  - "Welcome to Blog ........"
+
+
+
+
