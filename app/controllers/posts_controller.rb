@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    ## not sure if I need this
+    @posts = Post.all
   end
 
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show 
-    ## I think this would be my index page
+    @post = Post.find(params[:id])
   end
 
   private 

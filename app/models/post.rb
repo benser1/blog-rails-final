@@ -1,2 +1,7 @@
 class Post < ActiveRecord::Base
-end
+
+  belongs_to :user
+  
+
+
+end ## class end

@@ -15,6 +15,7 @@ I will need the following:
     - Includes Title, Content, date created?, Category check-boxes
       - Maybe let's users select themselves?
       - Maybe have an admin check box?
+  - View all posts goes in index.html.erb
 
 - UserPosts    ---- this will be the join table
   - belongs_to :user
@@ -27,6 +28,10 @@ I will need the following:
     - root 'welcome#home'
   - "Welcome to Blog ........"
   - ********** Figure out how to welcome them by first name ************
+
+
+
+  - Maybe allow for comments?? *****************
 
 
 
