@@ -2,7 +2,7 @@ I will need the following:
 - Users
   - Can Edit, Create, Delete own posts
   - has_many :posts
-  - Usere have a name, 
+  - Users have a name, 
 
 -Admin
   - Can do anything to any post
@@ -11,6 +11,7 @@ I will need the following:
 - Posts
   - belongs_to :user ### check on this
   - Posts have content, title
+  - Include a category check-box in posts form
 
 - UserPosts    ---- this will be the join table
   - belongs_to :user
