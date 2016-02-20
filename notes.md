@@ -58,6 +58,9 @@ I will need the following:
   - Login with Facebook
     - Leave comments with Facebook? 
 
+  - After sign in
+    - Show a list of blog post's with title and link
+
 
 
 

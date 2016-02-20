@@ -1,8 +1,16 @@
 <% if user_signed_in? %>
-  <h1>Welcome <%= current_user.name %>!</h1> 
-<% end %><br>
+  <h1>Welcome, <%= current_user.name %>!</h1> 
+  <h3><%= current_user.name %>'s Blog Posts:</h3><% current_user.posts.all.each do |post| %>
+  <ul>
+    <li><%= link_to post.title, post_path(post) %></li>
+  </ul>
+  <% end %><br>
+  <h4><%= link_to "New Post", new_post_path(@path) %></h4>
+<% else %>
+  <h1>Welcome to Blog Site!</h1>
+<% end %>
 
-<h4><%= link_to "New Post", new_post_path %>
-<%= link_to "View Posts", posts_path %></h4><br>
+
+<h4><%= link_to "View Posts", posts_path %></h4><br>
 
 <br><p>Site Created By: <strong>Brigan Enser</strong></p> 
