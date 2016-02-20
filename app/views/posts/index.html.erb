@@ -2,10 +2,11 @@
 
 <% @posts.each do |post| %>
 
-<p><%= last_updated post %></p>
-<h1><%= post.title %></h1>
+<h2><%= post.title %></h2>
+<p><em><%= last_updated post %></em></p>
 <p><%= post.content %></p>
-<%= link_to post.title, post_path(post.id) %>   #### Need to figure out how to link this
+<%= link_to post.title, post_path(post.id) %>
+<%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %> 
 
 <% end %>
 

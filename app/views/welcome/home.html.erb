@@ -1,4 +1,6 @@
-<h1>Welcome to Blog Rails Final Project</h1> 
+<% if user_signed_in? %>
+  <h1>Welcome <%= current_user.name %> to Blog Rails Final Project</h1> 
+<% end %>
 
 <p>Site Created By: <strong>Brigan Enser</strong></p>
 

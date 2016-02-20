@@ -16,6 +16,9 @@ I will need the following:
       - Maybe let's users select themselves?
       - Maybe have an admin check box?
   - View all posts goes in index.html.erb
+  - Create delete button
+    - Users can delete their own post
+    - Admins can delete any post
 
 - UserPosts    ---- this will be the join table
   - belongs_to :user
@@ -32,6 +35,8 @@ I will need the following:
 
 
   - Maybe allow for comments?? *****************
+
+  - See why updated time is not your time zone ?
 
 
 
