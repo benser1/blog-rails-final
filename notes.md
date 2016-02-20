@@ -27,9 +27,6 @@ I will need the following:
 
 
 - Create a Welcome Controller to replace Rails main page  
-  - #home method
-    - root 'welcome#home'
-  - "Welcome to Blog ........"
   - ********** Figure out how to welcome them by first name ************
 
 
@@ -37,6 +34,49 @@ I will need the following:
   - Maybe allow for comments?? *****************
 
   - See why updated time is not your time zone ?
+
+
+  - enum roles [:normal. admin, guest?]
+
+  - define roles with CanCan attribute method
+
+  - If No blog posts show a message on the screen
+
+  - Index Page
+    - Limit how much content is actually shown
+
+  - Link for Comments
+  https://learn.co/tracks/full-stack-web-development/rails/associations-and-rails/has-many-through-in-forms
+
+
+  - Order Posts by date?
+
+  - Need to be able to show only the user's posts that is currently logged in
+
+  - Give option to make posts public or private?
+    - "My Posts" "Public Posts"
+
+  - Anyone can view public posts. Only users can comment
+
+  - Login with Facebook
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

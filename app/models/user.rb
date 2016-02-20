@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   has_many :posts
   # has_many :comments, through: :posts  ADD THIS IN WHEN YOU CREATE COMMENTS 
 
+  enum role: [:normal, :admin]
+  def guest?
+    persisted?
+  end
+
 
 
 

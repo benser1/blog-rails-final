@@ -1,4 +1,9 @@
 <h1>Create New Blog Post</h1>
 
+<%= form_for(@post, method: :post) do |f| %>
+
 <%= render partial: 'form', locals: {post: @post} %>
+
+
+<% end %>
 

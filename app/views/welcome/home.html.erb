@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <h1>Welcome <%= current_user.name %> to Blog Rails Final Project</h1> 
-<% end %>
+<% end %><br>
 
-<p>Site Created By: <strong>Brigan Enser</strong></p>
+<h4><%= link_to "New Post", new_post_path %>
+<%= link_to "View Posts", posts_path %></h4><br>
 
-<%= link_to "New Post", new_post_path %>
-<%= link_to "View Posts", posts_path %> 
+<br><p>Site Created By: <strong>Brigan Enser</strong></p> 
