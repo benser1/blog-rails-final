@@ -56,6 +56,7 @@ I will need the following:
   - Anyone can view public posts. Only users can comment
 
   - Login with Facebook
+    - Leave comments with Facebook? 
 
 
 

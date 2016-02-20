@@ -1,4 +1,4 @@
-<h1><%=@post.title%></h1>
+<h1>Post Title: <%=@post.title%></h1>
 
 <h3><%= @post.title %> </h3>
 <p><em><%= last_updated @post %></em></p>
@@ -6,23 +6,24 @@
 <%= link_to "Edit", edit_post_path(@post.id) %>
 <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %><br>
 
+
 <br><h3>Comments:</h3><% @post.comments.each do |comment| %>
-  <p><%= comment.content %></p>
+  <p>Comment by: <strong><%= comment.name %></strong> </p>
+  <p><%= comment.content %></p> <%= button_to "Delete Comment", comment, method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>  <em><%= last_updated @post %></em> <br>
+  --------------------------------------------------------
 <% end %>
 
 
 <h3>Add a Comment</h3>
  
  <%= form_for @post.comments.build do |f| %>
-   <%= f.label "Comment:" %><br><br>
-   <%= f.text_area :content %><br><br>
-   <%= f.label "UserName:" %><br><br>
-   <%= f.collection_select :user_id, User.all, :id, :name, include_blank: "Please Choose a User Name" %><br><br>
+
+   <strong><%= f.label "Name:" %></strong><br>
+   <%= f.text_field :name %><br><br>
+
    <%= f.hidden_field :post_id %>
-   <%= f.label "Create A User Name:" %><br><br>
-   <%= f.fields_for :user, @post.comments.last.build_user do |u| %>
-     <%= u.text_field :name %><br>
-   <% end %><br>
+   <strong><%= f.label "Comment:" %></strong><br>
+   <%= f.text_area :content %><br><br>
    <%= f.submit %>
  <% end %>
 
