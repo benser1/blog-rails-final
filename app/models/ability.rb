@@ -12,11 +12,13 @@ class Ability
     # user.can :manage, Post if user.admin?
 
     #-------------------------------------------------------------
-    # unless user.nil?
-    #     can :create, Post
-    #     can :update, Post
-    #     can :destroy, Post
-    # end
+    can :read, Post
+    if !user.nil?
+        can :create, Post
+        can :update, Post
+        can :destroy, Post
+        # can :comment, Post
+    end
     # if user.admin? 
     #     can :manage, Post
     # end

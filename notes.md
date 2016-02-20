@@ -26,10 +26,6 @@ I will need the following:
 
 
 
-- Create a Welcome Controller to replace Rails main page  
-  - ********** Figure out how to welcome them by first name ************
-
-
 
   - Maybe allow for comments?? *****************
 
@@ -55,6 +51,7 @@ I will need the following:
 
   - Give option to make posts public or private?
     - "My Posts" "Public Posts"
+    - If public, show author name
 
   - Anyone can view public posts. Only users can comment
 

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @posts = Post.all
@@ -9,12 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
       @post = Post.create(post_params)
       redirect_to posts_path
-    else
-      redirect_to new_user_registration_path, alert: "You must be signed in to create a post!"
-    end
   end
 
   def edit

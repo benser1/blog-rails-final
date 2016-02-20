@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   # validates :content, length: { minimum: 250 }  Why isn't this working here?
 
   belongs_to :user
+  has_many :comments
 
 
 

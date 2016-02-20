@@ -8,9 +8,11 @@ class User < ActiveRecord::Base
   # validates :email, presence: true
 
   has_many :posts
-  # has_many :comments, through: :posts  ADD THIS IN WHEN YOU CREATE COMMENTS 
+  has_many :comments, through: :posts 
+  has_many :posts, through: :comments
+  has_many :comments
 
-  enum role: [:normal, :admin]
+  enum role: [:normal]
   def guest?
     persisted?
   end
