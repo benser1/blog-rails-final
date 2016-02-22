@@ -25,10 +25,6 @@ I will need the following:
   - belongs_to :post
 
 
-
-
-  - Maybe allow for comments?? *****************
-
   - See why updated time is not your time zone ?
 
 
@@ -45,8 +41,6 @@ I will need the following:
   https://learn.co/tracks/full-stack-web-development/rails/associations-and-rails/has-many-through-in-forms
 
 
-  - Order Posts by date?
-
   - Need to be able to show only the user's posts that is currently logged in
 
   - Give option to make posts public or private?
@@ -60,6 +54,17 @@ I will need the following:
 
   - After sign in
     - Show a list of blog post's with title and link
+
+  - Scope
+    - Need to look into how to do this
+      - Order Posts by date?
+
+  - Do I want to allow categories?
+    - We can implement this later if needed
+
+  - Right now a guest can delete comments -- need to fix this
+
+  - Right now any user can update any post --  Need to fix so only update own post
 
 
 

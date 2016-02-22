@@ -23,11 +23,8 @@ class PostsController < ApplicationController
 
   def update 
     params_id
-    if @post.update(post_params)
-       redirect_to posts_path
-    else
-      render :edit
-    end
+    @post.update(post_params)
+    redirect_to posts_path
   end
 
   def show 

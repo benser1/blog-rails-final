@@ -14,9 +14,9 @@ class Ability
     #-------------------------------------------------------------
     can :read, Post
     if !user.nil?
-        can :create, Post
-        can :update, Post
-        can :destroy, Post
+        can :create, Post, :user => user
+        can :update, Post, :user => user
+        can :destroy, Post, :user => user
         # can :comment, Post
     end
     # if user.admin? 
