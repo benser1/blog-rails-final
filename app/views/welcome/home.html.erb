@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
-  <h1>Welcome, <%= current_user.name %>!</h1> 
-  <h3><%= current_user.name %>'s Blog Posts:</h3><% current_user.posts.all.each do |post| %>
+  <h1>Welcome!</h1> 
+  <h3>Here are your Blog Posts:</h3><% current_user.posts.all.each do |post| %>
   <ul>
     <li><%= link_to post.title, post_path(post) %></li>
   </ul>
