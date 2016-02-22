@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
 
 
 
+
 end ## class end

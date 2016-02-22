@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <h1>Welcome!</h1> 
-  <h3>Here are your Blog Posts:</h3><% current_user.posts.all.each do |post| %>
+  <h3>Here are your Blog Posts:</h3><% current_user.posts.each do |post| %>
   <ul>
     <li><%= link_to post.title, post_path(post) %></li>
   </ul>
@@ -11,6 +11,6 @@
 <% end %>
 
 
-<h4><%= link_to "View Posts", posts_path %></h4><br>
+<h4><%= link_to "View All Public Posts", posts_path %></h4><br>
 
 <br><p>Site Created By: <strong>Brigan Enser</strong></p> 

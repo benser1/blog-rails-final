@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   # validates :email, presence: true
 
   has_many :posts
-  # has_many :comments, through: :posts 
-  # has_many :posts, through: :comments
   has_many :comments
 
   enum role: [:normal]
