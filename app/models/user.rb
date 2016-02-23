@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
-  enum role: [:normal]
+
+  # enum user: [:normal]
   # def guest?
   #   persisted?
   # end
