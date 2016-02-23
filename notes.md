@@ -79,6 +79,7 @@ I will need the following:
 
   - Show Categories to Everyone, and allow them to click on links
     - Delete Category
+    - No duplicate categories
 
     - Not letting me be signed out and view posts
 

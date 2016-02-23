@@ -2,9 +2,6 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all 
-    unless current_user.admin?
-      redirect_to root_path, alert: "Not allowed, bitch"
-    end
   end
 
   def show
@@ -16,14 +13,19 @@ class CategoriesController < ApplicationController
   end
 
  def create
-   Category.create(category_params)
-   redirect_to categories_path
+      Category.create(category_params)
+      redirect_to categories_path
  end
+
+ def destroy
+    @category = Category.find(params[:id]).destroy
+    redirect_to categories_path
+  end
  
  private
  
  def category_params
-   params.require(:category).permit(:name, :category_id)
+   params.require(:category).permit(:name)
  end
 
 

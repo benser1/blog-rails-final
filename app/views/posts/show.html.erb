@@ -4,8 +4,8 @@
 <p><em><%= last_updated @post %></em></p>
 <p> <%= @post.content %> </p>
 
-<%= link_to Category.find_by_id(@post.category_id).name, category_path(Category.find_by_id(@post.category_id))%>  
-<%= link_to "Edit", edit_post_path(@post.id) %>
+<%= link_to Category.find_by_id(@post.category_id).name, category_path(Category.find_by_id(@post.category_id))%> - 
+<%= link_to "Edit", edit_post_path(@post.id) %> - 
 <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %><br>
 
 

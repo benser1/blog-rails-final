@@ -1,6 +1,9 @@
 class Category < ActiveRecord::Base
+  before_validation { self.name = self.name.capitalize }
 
   has_many :posts
+  validates :name, presence: true, uniqueness: true
+
   
   def post_ids=(ids)
     ids.each do |id|
