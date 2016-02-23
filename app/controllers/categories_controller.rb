@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    cat_id
   end
 
   def new
@@ -13,12 +13,12 @@ class CategoriesController < ApplicationController
   end
 
  def create
-      Category.create(category_params)
-      redirect_to categories_path
+    Category.create(category_params)
+    redirect_to categories_path
  end
 
  def destroy
-    @category = Category.find(params[:id]).destroy
+    cat_id.destroy
     redirect_to categories_path
   end
  
@@ -26,6 +26,10 @@ class CategoriesController < ApplicationController
  
  def category_params
    params.require(:category).permit(:name)
+ end
+
+ def cat_id
+   @category = Category.find(params[:id])
  end
 
 

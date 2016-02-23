@@ -64,21 +64,11 @@ I will need the following:
 
   - Can login with facebook
     - Find out how to display first name after logged in
-    - Maybe create facebook comment field?
-      - prob not. 
 
   - Add login with Github
 
-  - Add an Admin
-    - Can do anything to any post / comment
-    - Create a checkbox for Admins in edit form
-      - This is assuming they signed in the FB
-        - Maybe write an if / else statement to check this
+  
 
-  - Add Author name to posts on index page 
-
-
-  - Not letting me be signed out and view posts
 
   - See if we can require a passcode when someone clicks on admin checkbox
   

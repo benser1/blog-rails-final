@@ -18,8 +18,9 @@ class Ability
         can :update, Post, :user => user
         can :destroy, Post, :user => user
         # can :comment, Post
-    else user.admin? 
+    elsif user.admin? 
         can :manage, Post
+    else
     end
   end
 end ## class end 
