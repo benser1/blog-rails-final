@@ -4,11 +4,12 @@ class PostsController < ApplicationController
   helper_method :sort_column,  :sort_direction
 
   def index
-    @posts = Post.order(sort_column + " " + sort_direction)
+    @user = User.find(params[:user_id])
+    # @posts = Post.order(sort_column + " " + sort_direction)
     # if params[:user_id]
     #   @posts = User.find(params[:user_id]).posts 
     # else
-    #   @posts = Post.all
+    #   @posts = Post.order(sort_column + " " + sort_direction)
     # end
   end
 
@@ -22,7 +23,11 @@ class PostsController < ApplicationController
       @post.category_id = params[:category_id]
       @post.save
 
-      redirect_to posts_path
+      redirect_to user_posts_path(current_user)
+  end
+
+  def all 
+    @posts = Post.all
   end
 
   def edit
@@ -32,20 +37,22 @@ class PostsController < ApplicationController
   def update 
     params_id
     @post.update(post_params)
-    redirect_to posts_path
+    redirect_to user_posts_path(current_user)
   end
 
   def show 
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
     # if params[:user_id]
     #   @post = User.find(params[:user_id]).posts.find(params[:id])
     # else
-      params_id
+    #   params_id
     # end
   end
 
   def destroy
     params_id.destroy
-    redirect_to posts_path
+    redirect_to user_posts_path(current_user)
   end
 
   private 
