@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index]
   end
 
+  # get '/users/:user_id/posts/:id' => 'posts#show'
+
 
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.

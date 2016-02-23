@@ -5,6 +5,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(sort_column + " " + sort_direction)
+    # if params[:user_id]
+    #   @posts = User.find(params[:user_id]).posts 
+    # else
+    #   @posts = Post.all
+    # end
   end
 
   def new
@@ -31,7 +36,11 @@ class PostsController < ApplicationController
   end
 
   def show 
-    params_id
+    # if params[:user_id]
+    #   @post = User.find(params[:user_id]).posts.find(params[:id])
+    # else
+      params_id
+    # end
   end
 
   def destroy

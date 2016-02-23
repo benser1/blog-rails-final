@@ -1,25 +1,14 @@
-<% if user_signed_in? %>
-  <h1>Welcome!</h1> 
-  <h3>Here are your Blog Posts:</h3><% current_user.posts.each do |post| %>
-  <ul>
-    <li><%= link_to post.title, post_path(post) %></li>
-  </ul>
-  <% end %><br>
-  <h4><%= link_to "New Post", new_post_path(@path) %></h4>
-  <h4><%= link_to "View All Public Posts", posts_path %></h4>
-  <h4><%= link_to "View Categories", categories_path %>  </h4>
 
- 
-    <% if current_user.admin? %>
-      <h4><%= link_to "Create Category", new_category_path %><br>
-    <% end %>
-<% else %>
   <h1>Welcome to Blog Site!</h1>
   <h3> Please Sign In or Create an Account to Continue to the Site</h3>
     <h4><%= link_to("Sign In", new_user_session_path) %> - 
     <%= link_to("Sign Up", new_user_registration_path) %></h4>
+
+  <% if user_signed_in? %>
+    <%= link_to "Your Posts", user_path(current_user) %>
+  <% end %>
   
-<% end %>
+
 
 
 <!-- <br><p>Site Created By: <strong>Brigan Enser</strong></p>  -->
