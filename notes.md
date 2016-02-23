@@ -59,12 +59,8 @@ I will need the following:
     - Need to look into how to do this
       - Order Posts by date?
 
-  - Do I want to allow categories?
-    - We can implement this later if needed
-
   - Right now a guest can delete comments -- need to fix this
 
-  - Right now any user can update any post --  Need to fix so only update own post
 
   - Can login with facebook
     - Find out how to display first name after logged in
@@ -81,6 +77,12 @@ I will need the following:
 
   - Add Author name to posts on index page 
 
+  - Show Categories to Everyone, and allow them to click on links
+    - Delete Category
+
+    - Not letting me be signed out and view posts
+
+  - See if we can require a passcode when someone clicks on admin checkbox
   
 
 
