@@ -1,21 +1,24 @@
 <h1>Blog Posts</h1>
 
+<table class ="pretty">
+  <tr>
+    <th><h2><%= sortable "title" %></h2></th>
+    <th><h2><%= sortable "updated_at", "Date" %></h2></th>
+    <th><h2><%= sortable "user_id", "Name" %></h2></th>
+  </tr>
 
   <% @posts.each do |post| %>
+<tr>
 
-    <h2><%= post.title %></h2> <% if post.user.name != nil %>
-      <em>Written by: <strong><%= post.user.name %></strong></em>
+    <td><%= link_to post.title, post_path(post.id) %>&nbsp&nbsp&nbsp&nbsp</td>
+    <td>&nbsp&nbsp&nbsp&nbsp<%= last_updated post %>&nbsp&nbsp&nbsp&nbsp</td>
+     <% if post.user.name != nil %>
+    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= post.user.name %>&nbsp&nbsp&nbsp&nbsp</td>
     <% else %>
-      <em>Written by: <strong><%= post.user.email %></strong></em>
+      <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= post.user.email %></td>
     <% end %>
-    <p><em><%= last_updated post %></em></p>
-    <p><%= post.content %></p>
-
-    <%= link_to "View Post", post_path(post.id) %> - 
-    <%= link_to "Edit", edit_post_path(post.id) %> - 
-    <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %>
-
-
+    
+</tr>
 <% end %>
-
+</table>
 

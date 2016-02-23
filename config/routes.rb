@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do 
     resources :posts, only: [:show, :index]
   end
-  # devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
 
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.

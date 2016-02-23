@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
+  helper_method :sort_column,  :sort_direction
+
   def index
-    @posts = Post.all
+    @posts = Post.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -47,6 +49,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def sort_column
+    params[:sort] || "title"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
+  end
 
 
 end ## class end

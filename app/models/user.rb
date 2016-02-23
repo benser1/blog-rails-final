@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
-  enum role: [:normal, :admin]
+  enum role: [:normal]
   # def guest?
   #   persisted?
   # end
@@ -23,7 +23,6 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
     end
   end
-
 
 
 
