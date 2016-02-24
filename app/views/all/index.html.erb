@@ -9,7 +9,7 @@
 
   <% @posts.each do |post| %>
 <tr>
-
+    
     <td><%= link_to post.title, user_post_path(User.find_by_id(post.user_id), post) %>&nbsp&nbsp&nbsp&nbsp</td>
     <td>&nbsp&nbsp&nbsp&nbsp<%= last_updated post %>&nbsp&nbsp&nbsp&nbsp</td>
      <% if post.user.name != nil %>

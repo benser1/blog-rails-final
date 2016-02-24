@@ -6,6 +6,11 @@ class AllController < ApplicationController
     @posts = Post.order(sort_column + " " + sort_direction) 
   end
 
+  def destroy
+    @post = Post.find(params[:id]).destroy
+    redirect_to user_posts_path(current_user)
+  end
+
   private 
 
   def sort_column

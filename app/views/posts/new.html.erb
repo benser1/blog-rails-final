@@ -1,14 +1,16 @@
 <h1>Create New Blog Post</h1>
 
-<%= form_for(@post, method: :post) do |f| %>
+<%= form_for [current_user, @post] do |f| %>
 
-<%= f.label "Category:" %><br>
-<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %> <br>
+  <%= f.label "Title:" %><br />
+  <%= f.text_field :title, :required => true %><br>
 
-<br><%= render partial: 'form', locals: {post: @post} %>
+  <br><%= f.label "Write content below:" %><br>
+  <%= f.text_area :content, :required => true, :cols => "50", :rows => "10" %> <br>
 
+  <br><%= f.label "Category:" %><br>
+  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %> <br>
 
-
+  <br><%= f.submit %>
 
 <% end %>
-

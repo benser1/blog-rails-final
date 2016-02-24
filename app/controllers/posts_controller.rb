@@ -25,6 +25,9 @@ class PostsController < ApplicationController
   def update 
     params_id
     @post.update(post_params)
+    @post.category_id = params[:category_id]
+    @post.user = current_user
+    @post.save
     redirect_to user_posts_path(current_user)
   end
 

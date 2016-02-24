@@ -17,6 +17,19 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
  end
 
+ def edit
+    cat_id 
+ end
+
+ def update 
+    cat_id 
+    @category.update(category_params)
+    @category_id = params[:category_id]
+    @category.save
+    redirect_to categories_path
+ end
+
+
  def destroy
     cat_id.destroy
     redirect_to categories_path
