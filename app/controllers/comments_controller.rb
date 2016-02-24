@@ -2,14 +2,12 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(comment_params)
-    redirect_to user_posts_path(current_user)
+    redirect_to all_index_path
   end
 
   def destroy
-    unless current_user.admin?
       @comment = Comment.find(params[:id]).destroy
-      redirect_to user_posts_path(current_user)
-    end
+      redirect_to all_index_path
   end
 
   private
