@@ -3,7 +3,7 @@
      <li><h4><%= link_to "View Your Posts", user_posts_path(@user.id) %></h4></li>
      <li><h4><%= link_to "New Post", new_post_path(@path) %></h4></li>
      <li><h4><%= link_to "View Categories", categories_path %>  </h4></li>
-     <li><h4><%= link_to "View All Posts", all_path %>
+     <li><h4><%= link_to "View All Posts", all_index_path %>
     </ul>
 <% if current_user.admin? %>
 <ul>

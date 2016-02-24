@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
-  helper_method :sort_column,  :sort_direction
-
   def index
     @user = User.find(params[:user_id])
   end
@@ -18,10 +16,6 @@ class PostsController < ApplicationController
       @post.save
 
       redirect_to user_posts_path(current_user)
-  end
-
-  def all 
-    @posts = Post.order(sort_column + " " + sort_direction)
   end
 
   def edit
@@ -53,14 +47,5 @@ class PostsController < ApplicationController
   def params_id
     @post = Post.find(params[:id])
   end
-
-  def sort_column
-    params[:sort] || "title"
-  end
-
-  def sort_direction
-    params[:direction] || "asc"
-  end
-
 
 end ## class end

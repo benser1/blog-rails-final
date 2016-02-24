@@ -9,7 +9,7 @@ class Ability
         can :create, Post, :user => user
         can :update, Post, :user => user
         can :destroy, Post, :user => user
-        can :read, Post
+        can :read, :all
     end
   end
 end ## class end 
