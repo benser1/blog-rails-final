@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id]).destroy
-    redirect_to user_posts_path(current_user)
+    unless current_user.admin?
+      @comment = Comment.find(params[:id]).destroy
+      redirect_to user_posts_path(current_user)
+    end
   end
 
   private

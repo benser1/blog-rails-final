@@ -1,6 +1,6 @@
   <% if user_signed_in? %>
   <h1>Welcome, <%if current_user.name != nil %><%=current_user.name%><%else%><%=current_user.email%><%end%>!</h1>
-      <h3><%= link_to "View Your Profile", user_path(current_user) %></h3>
+    <h3><%= link_to "View Your Profile", user_path(current_user) %></h3>
   <% else %>
     <h1>Welcome to Blog Site!</h1>
     <h3> Please Sign In or Create an Account to Continue to the Site</h3>

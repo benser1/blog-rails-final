@@ -2,7 +2,12 @@
 
 <%= form_for(@post, method: :post) do |f| %>
 
-<%= render partial: 'form', locals: {post: @post} %>
+<%= f.label "Category:" %><br>
+<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %> <br>
+
+<br><%= render partial: 'form', locals: {post: @post} %>
+
+
 
 
 <% end %>

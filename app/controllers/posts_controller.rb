@@ -5,12 +5,6 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    # @posts = Post.order(sort_column + " " + sort_direction)
-    # if params[:user_id]
-    #   @posts = User.find(params[:user_id]).posts 
-    # else
-    #   @posts = Post.order(sort_column + " " + sort_direction)
-    # end
   end
 
   def new
@@ -27,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def all 
-    @posts = Post.all
+    @posts = Post.order(sort_column + " " + sort_direction)
   end
 
   def edit
@@ -43,11 +37,6 @@ class PostsController < ApplicationController
   def show 
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    # if params[:user_id]
-    #   @post = User.find(params[:user_id]).posts.find(params[:id])
-    # else
-    #   params_id
-    # end
   end
 
   def destroy
