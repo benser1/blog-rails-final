@@ -34,6 +34,8 @@ class PostsController < ApplicationController
   def show 
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
+    @comment = Comment.find(params[:id])
+    @comment.user_id = current_user
   end
 
   def destroy
