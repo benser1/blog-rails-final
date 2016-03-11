@@ -1,10 +1,33 @@
-<%= form_for @post.comments.build do |f| %>
+<%= form_for [@post, @post.comments.build], :url => post_comments_path(@post) do |f| %>
 
    <strong><%= f.label "Name:" %></strong><br>
    <%= f.text_field :name, required: true %><br><br>
 
-   <%= f.hidden_field :post_id %>
    <strong><%= f.label "Comment:" %></strong><br>
    <%= f.text_area :content, required: true %><br><br>
    <%= f.submit %>
  <% end %>
+
+
+<!--  signup
+
+  name Avi
+
+  address_1_street Home
+  address_2_street Biz
+  address_3_street Vacay
+
+
+user has many address
+
+
+users
+id    name
+1      Avi
+
+addresses
+id    street     user_id
+1       Home         1
+2       Biz          1
+2       Vacay        1
+ -->

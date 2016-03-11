@@ -1,8 +1,7 @@
 <h1>Create New Blog Post</h1>
 
-<%= form_for [current_user, @post] do |f| %>
-
-  <%= f.label "Title:" %><br />
+<%= form_for @post do |f| %>
+  <%= f.label "Title:" %><br >
   <%= f.text_field :title, :required => true %><br>
 
   <br><%= f.label "Write content below:" %><br>
@@ -10,7 +9,12 @@
 
   <br><%= f.label "Category:" %><br>
   <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name) %> <br>
+  
+  <!-- to create a new category -->
 
   <br><%= f.submit %>
 
 <% end %>
+
+<!-- Nested forms write to two models or more -->
+<!-- Nested resources create one model associated with another parent -->

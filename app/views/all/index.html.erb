@@ -10,13 +10,9 @@
   <% @posts.each do |post| %>
 <tr>
     
-    <td><%= link_to post.title, user_post_path(User.find_by_id(post.user_id), post) %>&nbsp&nbsp&nbsp&nbsp</td>
+    <td><%= link_to post.title, post_path(post) %>&nbsp&nbsp&nbsp&nbsp</td>
     <td>&nbsp&nbsp&nbsp&nbsp<%= last_updated post %>&nbsp&nbsp&nbsp&nbsp</td>
-     <% if post.user.name != nil %>
-    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to post.user.name, user_posts_path(post.user_id) %>&nbsp&nbsp&nbsp&nbsp</td>
-    <% else %>
-      <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= post.user.email %></td>
-    <% end %>
+    <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= post.user.name %>&nbsp&nbsp&nbsp&nbsp</td>
     
 </tr>
 <% end %>
